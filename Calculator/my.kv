@@ -1,0 +1,70 @@
+FloatLayout:
+    orientation:'vertical'
+    MDIconButton:
+        icon: 'brightness-7'
+        pos_hint: {"left": .02,'top':1}
+        on_release:
+            theme = {
+            'Light':'brightness-3',
+            'Dark':'brightness-7'}
+            app_theme = app.theme_cls.theme_style
+            app.theme_cls.theme_style =  'Light' if  self.icon == 'brightness-7' else 'Dark'
+            self.icon = theme[app.theme_cls.theme_style]
+
+    TextInput:
+        id:Text
+        size_hint_y:None
+        size:1,dp(70)
+        font_size:dp(44)
+        multiline:False
+        background_color:[0, 0, 0, 0]
+        pos_hint:{'top':.87}
+
+    TextInput:
+        id:Text_hint
+        size_hint_y:None
+        size:1,dp(30)
+        font_size:dp(16)
+        multiline:False
+        background_color:[0, 0, 0, 0]
+        pos_hint:{'top':.74}
+
+    GridLayout:
+        rows:2
+        BoxLayout:
+
+        GridLayout:
+            cols:2
+            spacing:dp(5)
+
+            GridLayout:
+                cols:3
+                size_hint:3,1
+                spacing:dp(5)
+                id:number
+
+            GridLayout:
+                cols:1
+                spacing:dp(5)
+                id:Cal
+
+<NumButton@Button>:
+    font_size:dp(25)
+    background_color:[0, 0, 0, .6980392156862745]
+    on_press:
+        self.background_color=[0, 0, 0, .1980392156862745]
+    on_state:
+        self.background_color=[0, 0, 0, .6980392156862745]
+    on_release:
+        app.root.ids.Text.text += self.text
+        app.root.ids.Text_hint.text = app.Equal()
+
+<delete@Button>:
+    font_size:dp(25)
+    background_color:[0, 0, 0, .6980392156862745]
+    on_press:
+        self.background_color=[0, 0, 0, .1980392156862745]
+    on_state:
+        self.background_color=[0, 0, 0, .6980392156862745]
+    on_release:
+        app.root.ids.Text.text = app.root.ids.Text.text[0:-1]
