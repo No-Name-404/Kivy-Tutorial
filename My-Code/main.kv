@@ -1,0 +1,101 @@
+#:import hex kivy.utils.get_color_from_hex
+#:import Clipboard kivy.core.clipboard.Clipboard
+#:set app_theme app.theme_cls.theme_style
+#:set app_text_color app.theme_cls.text_color
+
+BoxLayout:
+    orientation:'vertical'
+    spacing:dp(3)
+    BoxLayout:
+        cols:1
+        color: '#12ffa3'
+        radius:[0,0,20,20]
+        size_hint_y:None
+        size:1,dp(40)
+        MDLabel:
+            text:'< My_Code >'
+            text_color:app.theme_cls.text_color
+            font_size:dp(20)
+            valign:'middle'
+            halign:'center'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: dp(40)
+        FloatLayout:
+            BoxLayout:
+                color:'#59a6aa'
+                pos_hint:{'top':1,'center_x':.5}
+                size_hint:None,None
+                size:dp(191),dp(40)
+                MDIconButton:
+                    icon:'logout'
+                    pos_hint:{'center_y':.5}
+                    on_release:exit()
+                MDIconButton:
+                    icon: 'brightness-7'
+                    pos_hint:{'center_y':.5}
+                    on_release:
+                        theme = {
+                        'Light':'brightness-3',
+                        'Dark':'brightness-7'}
+                        app_theme = app.theme_cls.theme_style
+                        app.theme_cls.theme_style =  'Light' if  self.icon == 'brightness-7' else 'Dark'
+                        self.icon = theme[app.theme_cls.theme_style]
+
+                MDIconButton:
+                    pos_hint:{'center_y':.5}
+                    icon:'telegram'
+    				on_release:
+                        pass
+    					# self.text = Clipboard.paste()
+        				# Clipboard.copy(base32.text)
+                MDIconButton:
+                    icon:'send'
+                    pos_hint:{'center_y':.5}
+
+    BoxLayout:
+        orientation:'vertical'
+        color:'#12f26e'
+        radius:[20,20,0,0]
+        BoxLayout:
+            size_hint_y:None
+            size:1,dp(50)
+            MDLabel:
+                text:'python3'
+                text_color:app.theme_cls.text_color
+                font_size:dp(20)
+                halign:'center'
+        BoxLayout:
+            orientation:'vertical'
+            FloatLayout:
+                MDRoundFlatIconButton:
+                    text: "Hashing"
+                    icon: "folder"
+                    pos_hint: {'center_x': .5, 'center_y': .6}
+
+
+
+
+<BoxLayout>
+    color:'#ffffff00'
+    radius:[20,20,20,20]
+    canvas:
+        Color:
+            rgba:hex(self.color)
+        RoundedRectangle:
+            pos:self.pos
+            size:self.size
+            radius:self.radius
+
+<GridLayout>
+    color:'#ffffff00'
+    radius:[20,20,20,20]
+    canvas:
+        Color:
+            rgba:hex(self.color)
+        RoundedRectangle:
+            pos:self.pos
+            size:self.size
+            radius:self.radius

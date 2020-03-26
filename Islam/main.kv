@@ -1,0 +1,58 @@
+FloatLayout:
+    MDBox:
+        color:'#000101' if app.theme_cls.theme_style=='Dark' else '#5a5a5a'
+        radius:[0,0,0,0]
+    MDBox:
+        orientation:'vertical'
+        BoxLayout:
+            color:'#000101' if app.theme_cls.theme_style=='Dark' else '#5a5a5a'
+            radius:[0,0,0,0]
+            size_hint_y:None
+            size:1,dp(50)
+            pos_hint:{'top':1}
+            BoxLayout:
+                MDLabel:
+                    text:'[b]Islam[/b]'
+                    color:1,1,1,1
+                    markup:True
+                    halign:'center'
+                    font_size:dp(20)
+        MDBox:
+            orientation:'vertical'
+            color:'#252121' if app.theme_cls.theme_style=='Dark' else '#a1a1a1'
+            radius:[20,20,0,0]
+            BoxLayout:
+                size_hint_y:None
+                size:1,dp(60)
+                pos_hint:{'top':1}
+                spacing:dp(10)
+                FloatLayout:
+                    IconImage:
+                        icon:'Images/photo(1).png'
+                        pos_hint:{'center_y':.5,'center_x':0.1}
+                    IconImage:
+                        icon:
+                        pos_hint:{'center_y':.5,'center_x':0.3}
+                    IconImage:
+                        icon:
+                        pos_hint:{'center_y':.5,'center_x':.5}
+
+                    IconImage:
+                        icon:
+                        pos_hint:{'center_y':.5,'center_x':0.7}
+                    IconImage:
+                        size_hint:None,None
+                        icon:
+                        pos_hint:{'center_y':.5,'center_x':0.9}
+
+            GridLayout:
+                cols:1
+                # Button
+            GridLayout:
+                cols:1
+                # Button
+
+
+
+
+    ThemeButton:

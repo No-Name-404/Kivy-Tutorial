@@ -1,0 +1,37 @@
+#:import hex kivy.utils.get_color_from_hex
+
+<ThemeButton@MDIconButton>
+    icon: 'brightness-7'
+    pos_hint: {"left": .02,'top':1}
+    on_release:
+        theme = {
+        'Light':'brightness-3',
+        'Dark':'brightness-7'}
+        app_theme = app.theme_cls.theme_style
+        app.theme_cls.theme_style =  'Light' if  self.icon == 'brightness-7' else 'Dark'
+        self.icon = theme[app.theme_cls.theme_style]
+
+<MDBox@BoxLayout>
+    color:'#ffffff00'
+    radius:[20,20,20,20]
+    canvas:
+        Color:
+            rgba:hex(self.color)
+        RoundedRectangle:
+            pos:self.pos
+            size:self.size
+            radius:self.radius
+
+<MDGrid@GridLayout>
+    color:'#ffffff00'
+    radius:[20,20,20,20]
+    canvas:
+        Color:
+            rgba:hex(self.color)
+        RoundedRectangle:
+            pos:self.pos
+            size:self.size
+            radius:self.radius
+
+<IconImage@MDIconButton>
+    size: dp(70),dp(70)
