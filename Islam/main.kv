@@ -22,7 +22,7 @@ FloatLayout:
         MDBox:
             orientation:'vertical'
             color:'#252121' if app.theme_cls.theme_style=='Dark' else '#a1a1a1'
-            radius:[20,20,0,0]
+            radius:[dp(20),dp(20),0,0]
             BoxLayout:
                 size_hint_y:None
                 size:1,dp(80)
@@ -38,7 +38,16 @@ FloatLayout:
                     spacing:dp(10)
                     BoxLayout:
                         size_hint_y:None
-                        size:1,dp(100)
+                        size:1,dp(150)
+                        ScrollView:
+                            bar_width: dp(0)
+                            scroll_type: ['bars', 'content']
+                            GridLayout:
+                                rows:1
+                                size: self.minimum_size[0],1
+                                size_hint: None, None
+                                spacing:dp(10)
+                                id:Islam
 
                     ScrollView:
                         BoxLayout:
@@ -46,7 +55,6 @@ FloatLayout:
                             height:self.minimum_height
                             orientation:'vertical'
                             spacing:dp(10)
-
                             id:videos
                             BoxLayout:
                                 size_hint_y:None
@@ -57,6 +65,6 @@ FloatLayout:
                                     font_name:'db/ar.otf'
                                     text: app.ar_text('لا إله إلا االله')
                                     halign:'center'
-                                    font_size:27
+                                    font_size:dp(27)
 
     ThemeButton:

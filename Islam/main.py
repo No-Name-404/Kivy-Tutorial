@@ -24,6 +24,10 @@ class MainApp(MDApp):
 			on_release=partial(self.OpenUrl,url[1]),
 			))
 
+		for image in db.Islam:
+			self.root.ids.Islam.add_widget(
+			MCard(image=image))
+
 	def ar_text(self,text):
 		text = arabic_reshaper.reshape(text)
 		text = bidi.algorithm.get_display(text)
