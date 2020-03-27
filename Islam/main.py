@@ -24,9 +24,9 @@ class MainApp(MDApp):
 			on_release=partial(self.OpenUrl,url[1]),
 			))
 
-		for image in db.Islam:
+		for image,url in db.Islam.items():
 			self.root.ids.Islam.add_widget(
-			MCard(image=image))
+			MCard(image=image,url=url))
 
 	def ar_text(self,text):
 		text = arabic_reshaper.reshape(text)
