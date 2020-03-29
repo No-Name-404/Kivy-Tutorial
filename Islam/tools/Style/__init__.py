@@ -3,7 +3,6 @@ from kivy.metrics import dp
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.image import Image
 from kivy.properties import *
-from kivy.graphics import *
 
 class FullImage(Image):
     pass
@@ -18,3 +17,6 @@ class MCard(BoxLayout):
         self.radius=[dp(20)]
         self.image=image if image else ''
         super(MCard,self).__init__(**kwargs)
+
+class VideoBox(BoxLayout):
+    pass

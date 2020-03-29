@@ -34,7 +34,7 @@
             radius:self.radius
 
 <IconImage>
-    size:dp(70),dp(70)
+    size:dp(55),dp(55)
 
 <-FullImage>:
     canvas:
@@ -45,11 +45,13 @@
             size: self.size
             pos: self.pos
             radius:[dp(20)]*4
+		# Line:
+        #     points: root.x,root.y, root.x+self.width,root.y
 
 <MCard>
     canvas:
         Color:
-            rgba:hex('#000101' if app.theme_cls.theme_style=='Dark' else '#7e7d7d')
+            rgba:hex('#373434' if app.theme_cls.theme_style=='Dark' else '#7e7d7d')
         RoundedRectangle:
             pos:self.pos
             size:self.size
@@ -66,3 +68,20 @@
         icon:'youtube'
         on_release:
             app.OpenUrl(t.url)
+
+<VideoBox>
+    size_hint: 1, None
+    size:dp(100),dp(200)
+    radius:[20,20,20,20]
+    canvas:
+        Color:
+            rgba:hex('#413c3c')
+        RoundedRectangle:
+            pos:self.pos
+            size:self.size
+            radius:self.radius
+    FloatLayout:
+        MDIconButton:
+            icon:'youtube'
+            md_bg_color:1,0,0,1
+            pos_hint:{'center_x':.5,'center_y':.5}

@@ -9,7 +9,7 @@ imageicon = {
     f'{path}image(4).png':[0.7,'https://www.youtube.com/channel/UCtwhxgYhV5VorOo4dpKZaAA'],
     f'{path}image(5).png':[0.9,'https://www.youtube.com/channel/UCwfu6d4uXvT5Gt-fz8HnsRQ'],
 }
-Islam={
+Islam = {
     f'{path}image(12).png':'https://www.youtube.com/user/DrMostafaMahmud',
     f'{path}image(11).png':'https://www.youtube.com/channel/UCWZEG9O221KaXiWThBtMHQQ',
     f'{path}image(6).png':'https://www.youtube.com/user/AlsharawiOfficial',
