@@ -4,9 +4,8 @@ from kivy.factory import Factory
 from kivy.metrics import dp
 
 from functools import partial
-import webbrowser
-import arabic_reshaper , bidi.algorithm
-import db
+import webbrowser, bidi.algorithm, db
+import arabic_reshaper
 from Style import *
 
 Builder.load_file('Style/style.kv')
@@ -31,7 +30,6 @@ class MainApp(MDApp):
 	def ar_text(self,text):
 		text = arabic_reshaper.reshape(text)
 		text = bidi.algorithm.get_display(text)
-		font_name = 'db/ar.otf'
 		return text
 
 	def OpenUrl(self,*url):
