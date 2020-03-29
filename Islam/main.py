@@ -4,11 +4,11 @@ from kivy.factory import Factory
 from kivy.metrics import dp
 
 from functools import partial
-import webbrowser, bidi.algorithm, db
-import arabic_reshaper
-from Style import *
+import webbrowser, bidi.algorithm
+from tools import arabic_reshaper, db
+from tools.Style import *
 
-Builder.load_file('Style/style.kv')
+Builder.load_file('tools/Style/style.kv')
 
 class MainApp(MDApp):
 	def __init__(self,**kwargs):
